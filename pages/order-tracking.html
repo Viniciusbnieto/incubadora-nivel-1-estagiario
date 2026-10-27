@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Rastreamento de Pedidos</title>
+        <style>
+          .resposta {
+            display: none;
+            background-color: blue;
+          }
+
+          body {
+            text-align: center;
+            background-color: grey;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          }
+        </style>
+    </head>
+
+    <body>
+
+      <header>
+      <h1>Rastreamento de Pedidos</h1>
+      </header>
+
+
+      <main>
+      <div class="form">
+        <label for="codigo">Insira o código do produto:</label>
+        <input type="text" id="codigo" placeholder="BR123456789">
+        <button id="rastreio">Rastrear</button>
+      </div>
+  
+
+      <div class="resposta" id="resposta">
+        <h2>Pedido encaminhado pela transportadora</h2>
+        <p>Estimativa de entrega 30/11/2026</p>
+      </div>
+
+      
+      <aside>
+      <div class="suporte">
+        <h3>Em caso de problemas, contate o nosso <a href="">suporte.</a></h3>
+      </div>
+      </aside>
+
+      </main>
+
+      
+      <footer>
+      <div class="Rodape">
+        <h4>Vini Express LTDA @</h4>
+        <p>Cidade de Quebec, Província de Quebec, Canadá.</p>
+      </div>
+      </footer>
+
+      <script>
+        const botao = document.getElementById("rastreio");
+        const campo = document.getElementById("codigo");
+        const resposta = document.getElementById("resposta");
+
+        botao.addEventListener("click", function () {
+          const codigo = campo.value.trim();
+
+          if (codigo !== "") {
+            resposta.style.display = "block";
+          } else {
+            resposta.style.display = "none";
+            alert("Digite um código para rastrear.");
+          }
+        });
+      </script>
+
+    </body>
+
+
+</html>
